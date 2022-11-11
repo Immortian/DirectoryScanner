@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryScanner", "DirectoryScanner\DirectoryScanner.csproj", "{ACD4B2E9-F028-437A-A8C4-7CB66D5B2CA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACD4B2E9-F028-437A-A8C4-7CB66D5B2CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD4B2E9-F028-437A-A8C4-7CB66D5B2CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD4B2E9-F028-437A-A8C4-7CB66D5B2CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD4B2E9-F028-437A-A8C4-7CB66D5B2CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F8D1F5D-6244-4E6D-A8E9-49286C7CFD42}
+	EndGlobalSection
+EndGlobal
