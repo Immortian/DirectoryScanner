@@ -1,6 +1,6 @@
-﻿using DirectoryScanner.Model;
+﻿using EnviromentProvider.Model;
 
-namespace DirectoryScanner
+namespace EnviromentProvider
 {
     public class EnviromentProvider
     {

@@ -1,4 +1,4 @@
-﻿namespace DirectoryScanner.Model
+﻿namespace EnviromentProvider.Model
 {
     public class Item
     {

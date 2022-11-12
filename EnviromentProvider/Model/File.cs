@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DirectoryScanner.Model
+namespace EnviromentProvider.Model
 {
     public class File : Item
     {
