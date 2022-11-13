@@ -1,7 +1,7 @@
 ﻿using EnviromentProvider.Model;
 using File = EnviromentProvider.Model.File;
 
-namespace DirectoryScanner.Models
+namespace EnviromentProvider
 {
     public class GenerateDocument
     {

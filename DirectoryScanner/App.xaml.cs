@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -21,7 +24,6 @@ namespace DirectoryScanner
             ServiceCollection services = new ServiceCollection();
             ConfigureServices(services);
             serviceProvider = services.BuildServiceProvider();
-
         }
 
         /// <summary>
@@ -38,5 +40,6 @@ namespace DirectoryScanner
             var mainWindow = serviceProvider.GetService<MainWindow>();
             mainWindow.Show();
         }
+
     }
 }

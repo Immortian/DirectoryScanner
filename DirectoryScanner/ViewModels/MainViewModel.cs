@@ -1,4 +1,4 @@
-﻿using DirectoryScanner.Models;
+﻿using EnviromentProvider;
 using System;
 namespace DirectoryScanner.ViewModels
 {
