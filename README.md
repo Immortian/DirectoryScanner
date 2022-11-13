@@ -1,8 +1,8 @@
 # DirectoryScanner
 
 ## Состав репозитория
-	* .Net6 ConsoleApplication (WinExe)
-	* .Net6 Библиотека классов
+	* .Net6.0 ConsoleApplication (WinExe)
+	* .Net6.0 Библиотека классов
 
 ## Описание библиотеки классов
 В библиотеке классов содержаться 3 класса модели:
@@ -27,3 +27,10 @@
 	* Сумаа размеров всех файлов каждого MimeType
 	* средний размер файла для каждого MimeType
 3. ***SaveDocument()*** - Сохраняет HtmlDocument как .html файл в рабочей директори
+
+## Исползованные технологии:
+* .Net6.0
+* System.IO
+* System.Windows.Forms
+* MimeTypes2.4.0
+* Costura.Fody5.7.0 (окончательная упаковка производилась средствами публикации VisualStudio 2022)
