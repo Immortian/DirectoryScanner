@@ -31,6 +31,7 @@ namespace EnviromentProvider
             HtmlElement treeView = Document.CreateElement("UL");
             Document.Body.AppendChild(treeView);
             AddTreeElement(ref Document, treeView, enviroment);
+            Document.Body.AppendChild(Document.CreateElement("BR"));
             return this;
         }
 
@@ -68,6 +69,13 @@ namespace EnviromentProvider
             return;
         }
 
+        /// <summary>
+        /// Construct html table of MIME types, representing:
+        /// MIME type name, count of files,
+        /// % ratio of this files in collection, summarised and avarage size
+        /// </summary>
+        /// <param name="files"></param>
+        /// <returns></returns>
         public GenerateDocument AddMimeStatistics(List<File> files)
         {
             var subHeader = Document.CreateElement("H2");
@@ -82,6 +90,7 @@ namespace EnviromentProvider
                 return this;
             }
             var table = Document.CreateElement("TABLE");
+            table.SetAttribute("Border", "1");
             Document.Body.AppendChild(table);
             var tableHeader = Document.CreateElement("THEAD");
             table.AppendChild(tableHeader);
@@ -110,13 +119,37 @@ namespace EnviromentProvider
             var tableBody = Document.CreateElement("TBODY");
             table.AppendChild(tableBody);
 
-            
+            tableRow = Document.CreateElement("TR");
+            tableBody.AppendChild(tableRow);
+
+            var tableCell = Document.CreateElement("TD");
+            //all mime types
+            tableCell.InnerText = "ALL";
+            tableRow.AppendChild(tableCell);
+            tableCell = Document.CreateElement("TD");
+            //file count
+            tableCell.InnerText = files.Count().ToString();
+            tableRow.AppendChild(tableCell);
+            tableCell = Document.CreateElement("TD");
+            //% ratio of files
+            tableCell.InnerText = "100%";
+            tableRow.AppendChild(tableCell);
+            tableCell = Document.CreateElement("TD");
+            //sum size of all files
+            tableCell.InnerText = Item.GetFormatedSize(files.Sum(x => x.Size));
+            tableRow.AppendChild(tableCell);
+            tableCell = Document.CreateElement("TD");
+            //average size of files
+            tableCell.InnerText = Item.GetFormatedSize(files.Sum(x => x.Size) / files.Count());
+            tableRow.AppendChild(tableCell);
+
+
             foreach (var mimeType in mimeTypes)
             {
                 tableRow = Document.CreateElement("TR");
                 tableBody.AppendChild(tableRow);
                 //table cells
-                var tableCell = Document.CreateElement("TD");
+                tableCell = Document.CreateElement("TD");
                 //mime type
                 tableCell.InnerText = mimeType;
                 tableRow.AppendChild(tableCell);
@@ -145,6 +178,8 @@ namespace EnviromentProvider
                     .Sum(x => x.Size) / files.Where(x => x.MimeType == mimeType).Count());
                 tableRow.AppendChild(tableCell);
             }
+
+            Document.Body.AppendChild(Document.CreateElement("BR"));
             return this;
         }
 
