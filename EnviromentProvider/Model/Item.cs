@@ -8,28 +8,25 @@
         //File or folder
         public string Type { get; set; }
 
-        public string FormatedSize
+        public static string GetFormatedSize(long size)
         {
-            get
+            double tempSize = size;
+            int divideCount = 0;
+            for (int i = 0; i < 4; i++)
             {
-                double tempSize = Size;
-                int divideCount = 0;
-                for (int i = 0; i < 4; i++)
+                if (tempSize > 1024)
                 {
-                    if (tempSize > 1024)
-                    {
-                        divideCount++;
-                        tempSize = Math.Round(tempSize /= 1024, 2);
-                    }
+                    divideCount++;
+                    tempSize = Math.Round(tempSize /= 1024, 2);
                 }
-                switch (divideCount)
-                {
-                    case 0: return $"{tempSize} Bytes"; break;
-                    case 1: return $"{tempSize} KB"; break;
-                    case 2: return $"{tempSize} MB"; break;
-                    case 3: return $"{tempSize} GB"; break;
-                    default: return tempSize.ToString();
-                }
+            }
+            switch (divideCount)
+            {
+                case 0: return $"{tempSize} Bytes"; break;
+                case 1: return $"{tempSize} KB"; break;
+                case 2: return $"{tempSize} MB"; break;
+                case 3: return $"{tempSize} GB"; break;
+                default: return tempSize.ToString();
             }
         }
     }
